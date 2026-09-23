@@ -1,4 +1,4 @@
-import { FiMenu, FiX } from 'react-icons/fi';
+import { FiMenu } from 'react-icons/fi';
 import Logo from '../assets/logo-text.png';
 
 const Navbar = () => {
