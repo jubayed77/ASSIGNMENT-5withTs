@@ -39,7 +39,7 @@ const Hero = () => {
           <div className="flex justify-end">
             <img
               src={Banner}
-              alt="Development Stack"
+              alt="Development tack"
               className="w-full max-w-[540px]"
             />
           </div>
