@@ -1,5 +1,3 @@
- 
- 
 import Logo from '../assets/logo-text.png' 
 const Navbar = () => { 
     return ( 

@@ -57,34 +57,31 @@ const App = () => {
   return (
     <>
       <Navbar />
-    <Hero />
-     <Title />
+      <Hero />
+      <Title />
 
-      <main>
-        <section className="container mx-auto my-10">
-          <div className="grid grid-cols-4 gap-5">
-            <Suspense
-              fallback={
-                <div>
-                  Loading
-                  <span className="text-amber-500">.....</span>
-                </div>
-              }
-            >
-              <Techs
-                handleSaveTech={handleSaveTech}
-                TechPromise={TechPromise}
-                saved={saved}
-              />
-            </Suspense>
-
-            <MyStackList
-              tech={saved}
-              handleClearAll={handleClearAll}
-              handleRemoveTech={handleRemoveTech}
+      <main className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-10">
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
+          <Suspense
+            fallback={
+              <div className="col-span-3 text-center py-10 font-medium">
+                Loading <span className="text-amber-500">.....</span>
+              </div>
+            }
+          >
+            <Techs
+              handleSaveTech={handleSaveTech}
+              TechPromise={TechPromise}
+              saved={saved}
             />
-          </div>
-        </section>
+          </Suspense>
+
+          <MyStackList
+            tech={saved}
+            handleClearAll={handleClearAll}
+            handleRemoveTech={handleRemoveTech}
+          />
+        </div>
       </main>
       <Fotter></Fotter>
 

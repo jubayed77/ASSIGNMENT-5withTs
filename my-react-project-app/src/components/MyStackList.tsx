@@ -8,41 +8,41 @@ type MyStackListProps = {
 
 const MyStackList = ({ tech, handleClearAll, handleRemoveTech }: MyStackListProps) => {
   return (
-    <aside id="stack-list" className="w-full">
+    //  stck twln aply
+    <aside id="stack-list" className="w-full sticky top-6 h-fit">
       <div className="w-full max-w-sm bg-white border border-slate-100 shadow-sm rounded-3xl p-6">
         
-        {/* title  desg*/}
+        {/* title design */}
         <h1 className="text-2xl font-bold text-slate-900 tracking-tight">
           Your Stack
         </h1>
 
-        {/* dynamic subtitle  desg*/}
+        {/* dynamic subtitle design */}
         <p className="text-slate-400 text-sm mt-1">
           {tech.length === 0
             ? "No technologies selected yet."
             : `${tech.length} ${tech.length === 1 ? "Technology" : "Technologies"} Selected`}
         </p>
 
-        {/* condtinal rendring desg*/}
+        {/* condtnl redring desgn */}
         {tech.length === 0 ? (
-          
           <div className="mt-6 border-2 border-dashed border-slate-200/80 rounded-2xl p-10 flex items-center justify-center text-center">
             <p className="text-slate-400 text-sm font-normal">
               Your stack is empty.
             </p>
           </div>
         ) : (
-          /* remove all desg */
+          /* remove all design */
           <div className="mt-6 flex flex-col gap-3">
             
-            {/* d work desg*/}
+            {/* dymc stack items */}
             <div className="flex flex-col gap-3 max-h-[320px] overflow-y-auto pr-1">
               {tech.map((item) => (
                 <div
                   key={item.id}
                   className="flex items-center justify-between bg-white border border-slate-200/70 rounded-2xl p-3.5 shadow-sm transition-all hover:border-slate-300"
                 >
-                  {/* icon & info  desg*/}
+                  {/* icon & info dsgn */}
                   <div className="flex items-center gap-3">
                     <img
                       src={item.icon}
@@ -59,7 +59,7 @@ const MyStackList = ({ tech, handleClearAll, handleRemoveTech }: MyStackListProp
                     </div>
                   </div>
 
-                  {/* R s D B */}
+                  {/* remove button */}
                   <button
                     type="button"
                     onClick={() => handleRemoveTech(item.id)}
@@ -84,7 +84,7 @@ const MyStackList = ({ tech, handleClearAll, handleRemoveTech }: MyStackListProp
               ))}
             </div>
 
-            {/* c all btton */}
+            {/* clear all button */}
             <button
               type="button"
               onClick={handleClearAll}

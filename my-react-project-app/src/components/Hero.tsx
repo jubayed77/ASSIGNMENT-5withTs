@@ -1,5 +1,3 @@
-
-import React from "react";
 import Banner from "../assets/banner-stack.png";
 
 const Hero = () => {
@@ -39,7 +37,7 @@ const Hero = () => {
           <div className="flex justify-end">
             <img
               src={Banner}
-              alt="Development tack"
+              alt="Development stack"
               className="w-full max-w-[540px]"
             />
           </div>
