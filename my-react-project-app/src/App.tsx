@@ -1,14 +1,97 @@
+import { Suspense, useState } from "react";
+import Techs from "./components/tech";
+import Title from "./components/title";
+import MyStackList from "./components/MyStackList";
+import type { Tech } from "./components/type/types";
+import toast from "react-hot-toast";
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import Fotter from "./components/Fotter";
 
-import './App.css'
+const fetchTech = async (): Promise<Tech[]> => {
+  const res = await fetch("/data.json");
+  const data = await res.json();
+  return data;
+};
 
-function App() {
-  
+const TechPromise = fetchTech();
+
+const App = () => {
+  const [saved, setSaved] = useState<Tech[]>([]);
+
+  const handleSaveTech = (tech: Tech) => {
+    const ids = saved.map((item) => item.id);
+
+    if (ids.includes(tech.id)) {
+      toast.error(`${tech.name} is already on your list`);
+      return;
+    }
+
+    setSaved([...saved, tech]);
+    toast.success(`${tech.name} added on your list`);
+  };
+
+  const handleRemoveTech = (id: string) => {
+    // check item is available
+    const findTech = saved.find((item) => item.id === id);
+
+    const updatedList = saved.filter((item) => item.id !== id);
+
+    setSaved(updatedList);
+
+    if (findTech) {
+      toast.success(`${findTech.name} removed from your list`);
+    }
+  };
+
+  const handleClearAll = () => {
+    if (!saved.length) return;
+
+    setSaved([]);
+
+    toast.success(`Your stack list is clear`, {
+      position: "bottom-right",
+    });
+  };
 
   return (
     <>
-    <h1 className='text-5xl'>hello world</h1>
-    </>
-  )
-}
+      <Navbar />
+    <Hero />
+     <Title />
 
-export default App
+      <main>
+        <section className="container mx-auto my-10">
+          <div className="grid grid-cols-4 gap-5">
+            <Suspense
+              fallback={
+                <div>
+                  Loading
+                  <span className="text-amber-500">.....</span>
+                </div>
+              }
+            >
+              <Techs
+                handleSaveTech={handleSaveTech}
+                TechPromise={TechPromise}
+                saved={saved}
+              />
+            </Suspense>
+
+            <MyStackList
+              tech={saved}
+              handleClearAll={handleClearAll}
+              handleRemoveTech={handleRemoveTech}
+            />
+          </div>
+        </section>
+      </main>
+      <Fotter></Fotter>
+
+
+
+    </>
+  );
+};
+
+export default App;
