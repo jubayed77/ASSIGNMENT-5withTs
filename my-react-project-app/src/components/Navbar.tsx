@@ -30,9 +30,9 @@ const Navbar = () => {
                     <li className='hover:text-[#D91B7E] transition-colors'><a href="#">Contact</a></li>
                 </ul>
 
-                {/*r side sin in b ar sin up b */}
+                {/*r side sin in b  ar sin up b */}
                 <div className='flex gap-2 sm:gap-4 items-center'>
-                    <button className="rounded-lg px-2.5 py-1.5 text-stone-700 transition hover:bg-stone-100 text-xs sm:text-sm md:text-base md:px-4 md:py-2">
+                    <button className="rounded-lg px-2.5 py-1.5 text-stone-700  transition hover:bg-stone-100 text-xs sm:text-sm md:text-base md:px-4 md:py-2">
                         Sign In
                     </button>
 

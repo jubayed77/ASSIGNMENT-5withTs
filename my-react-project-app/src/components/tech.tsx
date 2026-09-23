@@ -16,7 +16,7 @@ const Techs = ({ TechPromise, handleSaveTech, saved }: TeachProps) => {
             {allTechs.length === 0 ? (
                 <p className="col-span-full text-center text-gray-500">No techs found</p>
             ) : (
-                allTechs.map((singleTech) => (
+                allTechs.map((singleTech ) => (
                     <TechCard
                         key={singleTech.id}
                         tech={singleTech}

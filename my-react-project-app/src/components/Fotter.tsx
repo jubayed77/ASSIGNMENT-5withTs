@@ -3,7 +3,7 @@ import Logo from '../assets/logo-text.png';
 
 const Footer: React.FC = () => {
     return (
-        <div className='flex justify-between gap-4 container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 '>
+        <div >
 
             <footer className="w-full bg-white text-slate-600 font-sans py-12 px-6 border-t border-slate-100">
                 <div className="max-w-6xl mx-auto">

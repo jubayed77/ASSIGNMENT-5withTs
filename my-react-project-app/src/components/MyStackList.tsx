@@ -42,11 +42,11 @@ const MyStackList = ({ tech, handleClearAll, handleRemoveTech }: MyStackListProp
                   key={item.id}
                   className="flex items-center justify-between bg-white border border-slate-200/70 rounded-2xl p-3.5 shadow-sm transition-all hover:border-slate-300"
                 >
-                  {/* icon & info dsgn */}
+                  {/* icon &  info dsgn */}
                   <div className="flex items-center gap-3">
                     <img
                       src={item.icon}
-                      alt={item.name}
+                      alt=''
                       className="w-8 h-8 object-contain rounded-lg"
                     />
                     <div className="flex flex-col">

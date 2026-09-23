@@ -59,7 +59,6 @@ const App = () => {
       <Navbar />
       <Hero />
       <Title />
-
       <main className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-10">
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
           <Suspense
@@ -84,9 +83,6 @@ const App = () => {
         </div>
       </main>
       <Fotter></Fotter>
-
-
-
     </>
   );
 };

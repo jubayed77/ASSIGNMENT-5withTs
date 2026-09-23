@@ -45,12 +45,12 @@ const TechCard = ({ tech, handleSaveTech, saved }: ItechCardProps) => {
                     </span>
                 </div>
 
-                {/* button design */}
+                {/* button  design */}
                 <button
                     disabled={selected}
                     onClick={() => handleSaveTech(tech)}
-                    className="mt-5 w-full rounded-xl bg-gray-950 py-3 text-sm font-medium text-white transition hover:bg-gray-800 disabled:cursor-not-allowed disabled:bg-gray-400"
-                >
+                    className="mt-5 w-full rounded-xl bg-gray-950 py-3 text-sm font-medium text-white transition hover:bg-gray-800 disabled:cursor-not-allowed disabled:bg-gray-400">
+                
                     {selected ? "Saved to list" : "Add to Stack"}
                 </button>
             </div>
