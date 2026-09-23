@@ -29,4 +29,4 @@ const Techs = ({ TechPromise, handleSaveTech, saved }: TeachProps) => {
     );
 };
 
-export default Techs;
+// export default Techs;
